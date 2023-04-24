@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="demo.css">
+</head>
+
+<body>
+    <div id="conversionSection" hidden>
+        <h2>Conversion Results</h2>
+        <ol></ol>
+    </div>
+
+    <div id="testTablesSection">
+        <h2>Test Tables</h2>
+
+        <ol>
+            <li>
+                <table style="width:45mm;color:red">
+                    <caption>
+                        Caption
+                    </caption>
+                    <colgroup>
+                        <col style="width:15mm;" />
+                        <col style="width:15mm;" />
+                        <col style="width:15mm;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">FOOTER</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>ROW1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>ROW2</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>ROW3</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+
+            <li>
+                <table id="malformed">
+                    <tbody>
+                        <tr>
+                            <td>a1</td>
+                            <td>b1</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">a2 a3</td>
+                            <td>b2</td>
+                            <td>c2</td>
+                        </tr>
+                        <tr>
+                            <td>b3</td>
+                            <td>c3</td>
+                        </tr>
+                        <tr>
+                            <td>a4</td>
+                            <td>b4</td>
+                            <td>c4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+
+            <li>
+                <table id="mergedRows">
+                    <tbody>
+                        <tr>
+                            <td>a1</td>
+                            <td>b1</td>
+                            <td>c1</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">a2 a3</td>
+                            <td>b2</td>
+                            <td>c2</td>
+                        </tr>
+                        <tr>
+                            <td>b3</td>
+                            <td>c3</td>
+                        </tr>
+                        <tr>
+                            <td>a4</td>
+                            <td>b4</td>
+                            <td>c4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+
+            <li>
+                <table id="mergedRows2">
+                    <tbody>
+                        <tr>
+                            <td>a1</td>
+                            <td>b1</td>
+                            <td>c1</td>
+                        </tr>
+                        <tr>
+                            <td>a2</td>
+                            <td rowspan="2">b2 b3</td>
+                            <td>c2</td>
+                        </tr>
+                        <tr>
+                            <td>a3</td>
+                            <td>c3</td>
+                        </tr>
+                        <tr>
+                            <td>a4</td>
+                            <td>b4</td>
+                            <td>c4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+
+            <li>
+                <table id="mergedRows3">
+                    <tbody>
+                        <tr>
+                            <td>a1</td>
+                            <td>b1</td>
+                            <td>c1</td>
+                            <td>d1</td>
+                            <td rowspan="10">e1e2e3e4e5e6e7e8e9e10</td>
+                        </tr>
+                        <tr>
+                            <td>a2</td>
+                            <td>b2</td>
+                            <td>c2</td>
+                            <td rowspan="10">d2d3d4d5d6d7d8d9d10d11</td>
+
+                        </tr>
+                        <tr>
+                            <td>a3</td>
+                            <td>b3</td>
+                            <td rowspan="10">c3c4c5c6c7c8c9c10c11c12</td>
+                        </tr>
+                        <tr>
+                            <td>a4</td>
+                            <td rowspan="10">b4b5b6b7b8b9b10b11b12b13</td>
+                        </tr>
+                        <tr>
+                            <td class="">a5</td>
+                        </tr>
+                        <tr>
+                            <td class="">a6</td>
+                        </tr>
+                        <tr>
+                            <td class="">a7</td>
+                        </tr>
+                        <tr>
+                            <td class="">a8</td>
+                        </tr>
+                        <tr>
+                            <td class="">a9</td>
+                        </tr>
+                        <tr>
+                            <td class="">a10</td>
+                        </tr>
+                        <tr>
+                            <td class="">a11</td>
+                            <td>e11</td>
+                        </tr>
+                        <tr>
+                            <td class="">a12</td>
+                            <td class="">d12</td>
+                            <td>e12</td>
+                        </tr>
+                        <tr>
+                            <td class="">a13</td>
+                            <td class="">c13</td>
+                            <td class="">d13</td>
+                            <td>e13</td>
+                        </tr>
+                        <tr>
+                            <td class="">a14</td>
+                            <td>b14</td>
+                            <td>c14</td>
+                            <td>d14</td>
+                            <td>e14</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+    </div>
+
+    <script src="../src/main.js"></script>
+    <script src="testHelper.js"></script>
+</body>
+
+</html>
